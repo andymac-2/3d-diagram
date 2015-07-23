@@ -1,4 +1,4 @@
 # hello-world
 hello!
 
-Tutorial for gitHub
+Tutorial for gitHub Pull requests.
