@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<meta charset="UTF-8"> 
+<head>
+  <link href="dependency.css" rel="stylesheet" type="text/css">
+  <!-- <link href="SVGdiagram.css" rel="stylesheet" type="text/css"> -->
+  <style id="SVGdiagramCss">
+    #circleMarker {
+    fill: #CCCCCC
+    }
+    .verticalLine {
+    fill: none;
+    stroke: red;
+    stroke-width: 1.5px;
+    }
+    .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+    }
+    .node circle.bg{
+    fill: #ffffff;
+    stroke: #dddddd;
+    stroke-width: 1.5px;
+    }
+    .node circle.complete {
+    fill: #298A4A;
+    stroke: #298A4A;
+    stroke-width: 2.5px;
+    }
+    .node path {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 6.5px;
+    }
+    .node rect {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 2.5px;
+    }
+
+    .node text{
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: black;
+    }
+
+    .node {
+    font: 10px sans-serif;
+    }
+
+    .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+    }
+
+    .link_Na{
+    fill: none;
+    stroke: #CCCCCC;
+    stroke-width: 1.0px;
+    stroke-dasharray: 2, 3;
+    }
+    .link_Concern {
+    fill: none;
+    stroke: #FF9900;
+    stroke-width: 1.5px;
+    }
+    .link_Complete{
+    fill: none;
+    stroke: #66C2E0;
+    stroke-width: 1.5px;
+    }
+    .link_Good{
+    fill: none;
+    stroke: #00CC00;
+    stroke-width: 1.5px;
+    }
+    .link_Problem{
+    fill: none;
+    stroke: red;
+    stroke-width: 1.5px;
+    }
+
+    * {
+    font-family: sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="options">
+    <input type="file" id="xmlDocument" onchange="loadData()" />
+    <button onclick="loadData()" id="refreshXMLDocument">Reload File
+    </button>
+    <br>
+    <a id="downloadSVGDummy"></a>
+    <button onclick="downloadSVG()">Save diagram to file.
+    </button>
+    <br>
+    <select id="rootNode">
+    </select>
+    <br>
+    <button onclick="display();">Refresh display
+    </button>
+    <br>
+    <input id="svgWidth" type="number" name="width" min="1" max="10000"
+           value="1000"> Diagram width
+    <br>
+    <input id="svgHeight" type="number" name="height" min="1" max="10000"
+           value="1000"> Diagram height
+    <br>
+    <input id="svgLeft" type="number" name="left margin" min="1" max="10000"
+           value="20"> Left margin
+    <br>
+    <input id="svgRight" type="number"name="right margin" min="1" max="10000"
+           value="100"> Right margin
+    <br>
+    <input id="svgTop" type="number" name="top margin" min="1" max="10000"
+           value="200"> Top margin
+    <br>
+    <input id="svgBottom" type="number" name="bottom margin" min="1" max="10000"
+           value="20"> Bottom margin
+    <br>
+    <input id="textRotation" type="number" name="text rotation" min="-180" max="180"
+           value="-60"> Text rotation
+    <br>
+    <input id="nodeSpacing" type="number" name="nodeSpacing" min="0" max="300"
+           value="30"> Minimum node spacing
+    <br>
+    <input id="curvedOrStraight" type="checkbox" name="curved" value="curved">
+    Curved Links
+    <br>
+    <input id="linksNa" type="checkbox" name="linksNa" value="dontDisplay">
+    Show links no longer applicable
+  </div>
+  <div id="diagramWrapper">
+  </div>
+  <script src="dependency.js">
+  </script>
+</body>

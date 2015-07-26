@@ -1,0 +1,76 @@
+#circleMarker {
+    fill: #CCCCCC
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.node circle.bg{
+    fill: #ffffff;
+    stroke: #dddddd;
+    stroke-width: 1.5px;
+}
+.node circle.complete {
+    fill: #298A4A;
+    stroke: #298A4A;
+    stroke-width: 2.5px;
+}
+.node path {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 6.5px;
+}
+.node rect {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 2.5px;
+}
+
+.node text{
+    stroke: black;
+    stroke-width: 0.5px;
+    fill: black;
+}
+
+.node {
+    font: 10px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+}
+
+.link_Na{
+    fill: none;
+    stroke: #CCCCCC;
+    stroke-width: 1.0px;
+    stroke-dasharray: 2, 3;
+}
+.link_Concern {
+    fill: none;
+    stroke: #FF9900;
+    stroke-width: 1.5px;
+}
+.link_Complete{
+    fill: none;
+    stroke: #66C2E0;
+    stroke-width: 1.5px;
+}
+.link_Good{
+    fill: none;
+    stroke: #00CC00;
+    stroke-width: 1.5px;
+}
+.link_Problem{
+    fill: none;
+    stroke: red;
+    stroke-width: 1.5px;
+}
+
+* {
+    font-family: sans-serif;
+}
